@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MORNIUS™ | Pure Food • Healthy Life</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;color:#064d2d;background:#fff}
+a{text-decoration:none;color:inherit}
+
+/* TOP BAR */
+.topbar{
+    background:#00552f;color:#fff;display:flex;justify-content:space-between;
+    padding:8px 6%;font-size:13px;
+}
+
+/* HEADER */
+header{
+    height:78px;display:flex;align-items:center;justify-content:space-between;
+    padding:0 6%;background:white;border-bottom:1px solid #eee;
+    position:sticky;top:0;z-index:100;
+}
+.logo{font-size:36px;font-weight:900;color:#00552f}
+.logo span{color:#58a72d}
+.tagline{font-size:12px;margin-top:-5px;color:#555}
+nav{display:flex;gap:30px;align-items:center}
+nav a{font-size:14px;font-weight:600}
+nav a:hover{color:#65a932}
+.search{border:1px solid #ddd;border-radius:25px;padding:11px 18px;width:220px}
+
+/* HERO */
+.hero{
+    min-height:430px;display:flex;align-items:center;padding:45px 7%;
+    background:linear-gradient(90deg,#f7fff1 0%,#fff 45%,#edf8df 100%);
+    position:relative;overflow:hidden;
+}
+.hero-text{width:45%;z-index:2}
+.hero-text small{font-size:18px;font-style:italic}
+.hero h1{font-size:78px;line-height:.95;color:#00552f;margin:15px 0;font-weight:900}
+.hero h2{font-size:24px;margin-bottom:15px}
+.hero p{color:#555;line-height:1.6;max-width:430px}
+.btn{display:inline-block;margin-top:20px;padding:13px 28px;border-radius:25px;background:#006437;color:white;font-weight:bold}
+.btn:hover{background:#65a932}
+.hero-image{width:55%;text-align:center}
+.hero-image img{width:100%;max-width:650px;border-radius:25px}
+
+/* FEATURES */
+.features{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+    padding:20px 7%;background:#f3faed;
+}
+.feature{text-align:center;padding:12px;border-right:1px solid #c9ddc4}
+.feature:last-child{border:0}
+.feature-icon{font-size:28px}
+.feature strong{display:block;margin-top:6px;font-size:14px}
+
+/* SECTION */
+.section{padding:45px 6%}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.section-title h2{font-size:27px}
+
+/* CATEGORIES */
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}
+.category{background:#f4faef;border-radius:12px;padding:15px;text-align:center;transition:.3s}
+.category:hover{transform:translateY(-5px);box-shadow:0 5px 18px #0002}
+.category img{width:100%;height:120px;object-fit:cover;border-radius:10px}
+.category h3{font-size:15px;margin:10px 0}
+.category a{font-size:12px;font-weight:bold}
+
+/* STORY */
+.story{
+    display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:20px;
+    background:#f5faef;padding:20px;border-radius:15px;
+}
+.story img{width:100%;height:220px;object-fit:cover;border-radius:12px}
+.story-content{padding:20px}
+.story-content h2{margin-bottom:15px}
+.story-content p{color:#555;line-height:1.7}
+.why{padding:20px}
+.why li{list-style:none;padding:8px 0}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}
+.product{border:1px solid #e4e4e4;border-radius:12px;padding:12px;position:relative}
+.product img{width:100%;height:130px;object-fit:cover;border-radius:8px}
+.product h3{font-size:14px;margin:10px 0 5px}
+.price{font-weight:bold;margin-bottom:10px}
+.cart-btn{width:100%;border:0;background:#006437;color:white;padding:10px;border-radius:7px;cursor:pointer}
+.cart-btn:hover{background:#68a936}
+
+/* FOOTER */
+footer{background:#00552f;color:white;padding:40px 7% 15px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:40px}
+footer h3{margin-bottom:15px}
+footer p,footer li{color:#d8eee0;font-size:14px;line-height:1.8}
+footer ul{list-style:none}
+.newsletter input{padding:12px;border:0;border-radius:6px;width:70%}
+.newsletter button{padding:12px 15px;border:0;border-radius:6px;background:#7abf38;color:white}
+.copyright{text-align:center;border-top:1px solid #39805c;margin-top:30px;padding-top:15px;font-size:12px}
+
+/* MOBILE */
+@media(max-width:900px){
+    nav{display:none}
+    .search{width:150px}
+    .hero{flex-direction:column;text-align:center}
+    .hero-text,.hero-image{width:100%}
+    .hero h1{font-size:55px}
+    .features{grid-template-columns:repeat(2,1fr)}
+    .categories{grid-template-columns:repeat(2,1fr)}
+    .products{grid-template-columns:repeat(2,1fr)}
+    .story{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:500px){
+    .topbar{font-size:10px}
+    header{height:65px}
+    .logo{font-size:25px}
+    .search{display:none}
+    .hero{padding:35px 20px}
+    .hero h1{font-size:45px}
+    .features{grid-template-columns:1fr 1fr;padding:15px}
+    .categories{grid-template-columns:1fr 1fr}
+    .products{grid-template-columns:1fr 1fr}
+    .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <span>🚚 Free Shipping on Orders Above ₹499</span>
+    <span>🌿 Pure Food • Healthy Life</span>
+    <span>Track Order | Help | Login / Register</span>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div>
+        <div class="logo">MORNIUS<span>™</span></div>
+        <div class="tagline">Pure Food • Healthy Life</div>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About Us</a>
+        <a href="#">Blog</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <input class="search" type="search" placeholder="Search for products...">
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <small>Nature's Goodness<br>for a Better Tomorrow</small>
+        <h1>MORNIUS™</h1>
+        <h2>Pure Food • Healthy Life</h2>
+        <p>Premium quality natural food products for a healthier you and a happier tomorrow.</p>
+        <a href="#shop" class="btn">Shop Now →</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="banner.jpg" alt="MORNIUS Natural Food">
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    <div class="feature"><div class="feature-icon">🌿</div><strong>100% Natural<br>Ingredients</strong></div>
+    <div class="feature"><div class="feature-icon">🧪</div><strong>No Added<br>Preservatives</strong></div>
+    <div class="feature"><div class="feature-icon">🛡️</div><strong>Rich in<br>Nutrition</strong></div>
+    <div class="feature"><div class="feature-icon">🤝</div><strong>Support<br>Local Farmers</strong></div>
+    <div class="feature"><div class="feature-icon">🚚</div><strong>Fast & Safe<br>Delivery</strong></div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+    <div class="section-title">
+        <h2>🌿 Shop by Category</h2>
+        <a href="#">View All Categories →</a>
+    </div>
+
+    <div class="categories">
+        <div class="category"><img src="dal.jpg" alt="Dal"><h3>Dal & Pulses</h3><a href="#">Shop Now →</a></div>
+        <div class="category"><img src="grains.jpg" alt="Grains"><h3>Grains & Cereals</h3><a href="#">Shop Now →</a></div>
+        <div class="category"><img src="moringa.jpg" alt="Moringa"><h3>Moringa Products</h3><a href="#">Shop Now →</a></div>
+        <div class="category"><img src="spices.jpg" alt="Spices"><h3>Spices & Herbs</h3><a href="#">Shop Now →</a></div>
+        <div class="category"><img src="superfood.jpg" alt="Superfood"><h3>Organic Superfoods</h3><a href="#">Shop Now →</a></div>
+        <div class="category"><img src="other.jpg" alt="Other"><h3>Other Products</h3><a href="#">Shop Now →</a></div>
+    </div>
+</section>
+
+<!-- STORY -->
+<section class="section" id="about">
+    <div class="story">
+        <img src="farmer.jpg" alt="Local Farmer">
+
+        <div class="story-content">
+            <h2>🌿 Our Story</h2>
+            <p>At MORNIUS, we believe that good food leads to a healthier life. We bring you pure, natural and high-quality food products, sourced directly from trusted farmers and nature's best ingredients.</p>
+            <a href="#" class="btn">Know More →</a>
+        </div>
+
+        <div class="why">
+            <h2>Why Choose MORNIUS?</h2>
+            <ul>
+                <li>✓ 100% Natural & Pure</li>
+                <li>✓ No Added Preservatives</li>
+                <li>✓ Rich in Nutrients</li>
+                <li>✓ Supports Local Farmers</li>
+                <li>✓ Affordable & Trusted</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="shop">
+    <div class="section-title">
+        <div>
+            <h2>🌿 Featured Products</h2>
+            <p>Fresh, healthy and trusted by thousands.</p>
+        </div>
+        <a href="#">View All Products →</a>
+    </div>
+
+    <div class="products">
+        <div class="product"><img src="toor-dal.jpg" alt="Toor Dal"><h3>Toor Dal</h3><div class="price">₹120 / 1kg</div><button class="cart-btn">Add to Cart</button></div>
+        <div class="product"><img src="moringa-powder.jpg" alt="Moringa Powder"><h3>Moringa Powder</h3><div class="price">₹250 / 100g</div><button class="cart-btn">Add to Cart</button></div>
+        <div class="product"><img src="chana-dal.jpg" alt="Chana Dal"><h3>Chana Dal</h3><div class="price">₹110 / 1kg</div><button class="cart-btn">Add to Cart</button></div>
+        <div class="product"><img src="turmeric.jpg" alt="Turmeric"><h3>Organic Turmeric Powder</h3><div class="price">₹180 / 100g</div><button class="cart-btn">Add to Cart</button></div>
+        <div class="product"><img src="jeera.jpg" alt="Jeera"><h3>Jeera (Cumin Seeds)</h3><div class="price">₹200 / 100g</div><button class="cart-btn">Add to Cart</button></div>
+        <div class="product"><img src="atta.jpg" alt="Atta"><h3>Multi Grain Atta</h3><div class="price">₹160 / 1kg</div><button class="cart-btn">Add to Cart</button></div>
+    </div>
+</section>
+
+<!-- CONTACT / BUSINESS INFO -->
+<section class="section" id="contact">
+    <div class="story">
+        <div class="story-content">
+            <h2>📞 Contact MORNIUS</h2>
+            <p><strong>Phone:</strong> +91 77508 78905</p>
+            <p><strong>Email:</strong> mornius.india@gmail.com</p>
+            <p><strong>Address:</strong> Konda Gaon, Dist. Bastar, Chhattisgarh</p>
+        </div>
+        <div class="story-content">
+            <h2>🌿 MORNIUS™</h2>
+            <p>Pure Food • Healthy Life</p>
+            <p>Nature's Goodness for a Better Tomorrow.</p>
+        </div>
+        <div class="story-content">
+            <h2>🛒 Shop Online</h2>
+            <p>Quality food products delivered safely to your home.</p>
+            <a href="#shop" class="btn">Start Shopping →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h2>MORNIUS™</h2>
+            <p>Pure Food • Healthy Life</p>
+            <p>🌿 Nature's Goodness for a Better Tomorrow</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Home</li><li>Shop</li><li>About Us</li><li>Blog</li><li>Contact</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Customer Care</h3>
+            <ul>
+                <li>Shipping Policy</li><li>Return & Refund</li><li>Privacy Policy</li>
+                <li>Terms & Conditions</li><li>FAQ</li>
+            </ul>
+        </div>
+
+        <div class="newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Get the latest updates, offers and healthy living tips.</p>
+            <br>
+            <input type="email" placeholder="Your email address">
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2026 MORNIUS™. All Rights Reserved.
+        <br>🌿 Pure Food • Healthy Life
+    </div>
+</footer>
+
+</body>
+                           </html>
+                           
